@@ -1,8 +1,92 @@
-body{
-    background-image: url("images/background.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position:100% 80%;
+:root{
 
-    color:white;
 }
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("images/background3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 30%;
+    margin:100px 60px;
+}
+
+/*Wrapper*/
+body > div{ 
+    max-width: 1080px; /*margin på bodyn = > 60 + 60 + 1080 = 1200 */
+    min-width: 780px;  /*margin på bodyn = > 60 + 60 + 780 = 900*/
+    
+    background-color: rgba(0, 0, 0, 0.4);
+    color:white;
+
+    margin:auto;
+    padding:20px;
+
+    border-radius:20px;
+}
+
+nav{
+    display: flex;
+    flex-basis: 0;
+
+    gap:5px;
+    height: 65px;
+
+    margin:40px 0;
+}
+
+nav a{
+    flex-grow:1;
+    
+    text-decoration: none;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+nav a:nth-child(2){
+    box-shadow: 0px 0px 5px white;
+    border:1px solid white;
+}
+
+nav a:not(:nth-child(2)):hover{
+    background-color:rgba(255, 255, 255, 0.8) ;
+    color:rgb(0, 0, 0);
+}
+
+
+/*Main part */
+
+main section{
+    border:1px solid white;
+    border-radius: 20px; 
+    padding:20px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+main .flex-outer-container{
+    display: flex;
+
+}
+
+main .grid-container{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+}
+
+main section:nth-child(1) .grid-container div:nth-child(2){
+    grid-column:3 / span 2;
+}
+
+
+
