@@ -1,0 +1,252 @@
+:root{
+    --h1_font_fam:"Bungee Shade";
+    --h2_font_fam:"Bungee Outline";
+    --h3_font_fam:"Barlow Condensed";
+    --common_font_fam:"Barlow Semi Condensed";
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../media/images/background3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 30%;
+    margin:100px 60px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: var(--common_font_fam);
+}
+
+
+
+/*Text settings*/
+
+h1{
+    font-family: var(--h1_font_fam);
+}
+
+h2{
+    font-family: var(--h2_font_fam);
+}
+
+h3{
+    font-family: var(--h3_font_fam);
+}
+
+p{
+    margin:0;
+}
+
+span{
+    font-weight: bold;
+}
+
+.album-text-container > p{
+    
+}
+
+
+/*Wrapper*/
+body > div{ 
+    max-width: 1080px; /*margin på bodyn = > 60 + 60 + 1080 = 1200 */
+    min-width: 780px;  /*margin på bodyn = > 60 + 60 + 780 = 900*/
+
+    background-color: rgba(0, 0, 0, 0.4);
+    color:white;
+    padding:20px;
+
+    border-radius:20px;
+}
+
+/*Navigation*/
+
+nav{
+    display: flex;
+    gap:5px;
+    height: 65px;
+    margin:40px 0;
+}
+
+nav a{
+    flex-grow:1;
+    flex-basis: 0;
+    
+    text-decoration: none;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+nav a:nth-child(2){
+    box-shadow: 0px 0px 5px white;
+    border:1px solid white;
+    font-weight: 800;
+}
+
+nav a:not(:nth-child(2)):hover{
+    background-color:rgba(255, 255, 255, 0.8) ;
+    color:rgb(0, 0, 0);
+}
+
+
+/*Main part */
+
+main section{
+    border:1px solid white;
+    border-radius: 20px; 
+    padding:15px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*images*/
+
+main img{
+    width: 100%;
+    height: 100%;
+
+    object-fit:cover;
+
+    border-radius: 20px 20px 0px 0px;
+}
+
+main img:nth-child(2):hover{
+    opacity: 0;
+}
+
+main img:nth-child(2){
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom:0;
+
+    opacity:1;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+#grid-image1, #grid-image2{
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: end;
+}
+
+
+/*The layout */
+main .grid-outer-container{
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap:15px;
+}
+
+/*Album image and text layout and settings*/
+
+main .flex-album-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+main .flex-album-container div{
+    flex-grow: 1;
+}
+
+main .flex-album-container > div:nth-child(1){
+    position: relative;
+}
+
+main .album-text-container{
+    display: flex;
+    gap:10px;
+
+    margin:10px 0;
+}
+
+main .album-text-container div{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    padding:15px;
+}
+
+main .album-text-container > div:nth-child(1){
+    border-bottom-left-radius: 20px;
+}
+
+main .album-text-container > div:nth-child(2){
+    border-bottom-right-radius: 20px;
+}
+
+
+/*The grid container at the bottom of each page*/
+
+
+main .grid-container{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    gap:3px;
+}   
+
+main .grid-container > div{
+    padding:30px 10px;
+    background-color: #373737;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/*Musicians list settings*/
+
+
+main .grid-outer-container > div > ul{
+    padding:0;
+}
+
+main ul li{
+    list-style-type: none;
+}
+
+
+/*Imported Fonts */
+
+
+
+@font-face {
+    font-family:"Barlow semi Condensed";
+    src: url("../media/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf");
+}
+
+@font-face {
+    font-family:"Barlow Condensed";
+    src: url("../media/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf");
+}
+
+@font-face {
+    font-family:"Bungee Outline";
+    src: url("../media/fonts/Bungee_Outline/BungeeOutline-Regular.ttf");
+}
+
+@font-face {
+    font-family:"Bungee Shade";
+    src: url("../media/fonts/Bungee_Shade/BungeeShade-Regular.ttf");
+}

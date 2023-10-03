@@ -1,0 +1,20 @@
+
+/*The bottom grid*/
+
+main section:nth-child(1) .grid-container div:nth-child(2){
+    grid-column:3 / span 2;
+}
+
+main section:nth-child(2) .album-text-container > div{
+    background-color: #000203;
+    color:white;
+}
+
+section:nth-child(1) .grid-container div:nth-child(1){border-top-right-radius: 0px;}
+section:nth-child(1) .grid-container div:nth-child(2){border-bottom-left-radius: 0px;}
+section:nth-child(1) .grid-container div:nth-child(3){border-top-left-radius: 0px;}
+section:nth-child(1) .grid-container div:nth-child(4){border-bottom-right-radius: 0px;}
+
+main #grid-image1{
+    background-image: url("../media/images/fleetwood-members2.jpg");
+}

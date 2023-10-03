@@ -1,0 +1,33 @@
+/*The text and background color for the album text*/
+
+main section:nth-child(1) .album-text-container > div{
+    background-color: rgb(255, 255, 255);
+    color:black;
+}
+
+/*The bottom grid*/
+
+main section:nth-child(2) .grid-container > div{
+    background-color: #dfdad1;
+}
+
+main section:nth-child(2) .grid-container > div{
+    color: black;
+}
+
+main section:nth-child(2) .grid-container div:nth-child(1){
+    grid-column: 1 / span 2;
+}
+
+section:nth-child(2) .grid-container div:nth-child(1){border-bottom-left-radius: 0px;}
+section:nth-child(2) .grid-container div:nth-child(2){border-top-left-radius: 0px;}
+section:nth-child(2) .grid-container div:nth-child(3){border-top-left-radius: 0px;}
+section:nth-child(2) .grid-container div:nth-child(4){border-bottom-right-radius: 0px;}
+
+
+main #grid-image2{
+    background-image: url("../media/images/fleetwood-members.jpg");
+    grid-column:4 / span 2;
+
+    color:#dfdad1;
+}
