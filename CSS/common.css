@@ -4,6 +4,7 @@
     --h3_font_fam:"Barlow Condensed";
     --common_font_fam:"Barlow Semi Condensed";
 
+    --main_font_sz:16px;
 }
 
 *{
@@ -21,34 +22,61 @@ body{
     justify-content: center;
 
     font-family: var(--common_font_fam);
+    font-size: (var(--main_font_sz));
 }
-
 
 
 /*Text settings*/
 
 h1{
     font-family: var(--h1_font_fam);
+    font-size: calc(var(--main_font_sz) + 60px);
+    margin:0;
+    line-height: 1;
 }
 
 h2{
     font-family: var(--h2_font_fam);
+    font-size: calc(var(--main_font_sz) + 15px);
+    line-height: 1;
+    margin:0;
+
 }
 
 h3{
     font-family: var(--h3_font_fam);
+    font-size: calc(var(--main_font_sz) + 9px);
+    margin-top:5px;
+    margin-bottom:0px;
 }
 
-p{
+nav a{
+    font-size:calc(var(--main_font_sz) + 8px);
+    line-height: 1;
+}
+
+p, li{
     margin:0;
+    font-size: calc(var(--main_font_sz));
+    line-height: 1.2;
+}
+
+.text-container > ul{
+    margin:55px 0;
 }
 
 span{
     font-weight: bold;
+    font-size: calc(var(--main_font_sz) + 2px);
 }
 
-.album-text-container > p{
-    
+.album-text-container p{
+    font-size: calc(var(--main_font_sz) - 3px);
+    line-height: 1.25;
+}
+
+.grid-container p{
+    font-size: calc(var(--main_font_sz) - 1px);
 }
 
 
@@ -62,6 +90,7 @@ body > div{
     padding:20px;
 
     border-radius:20px;
+
 }
 
 /*Navigation*/
@@ -70,7 +99,7 @@ nav{
     display: flex;
     gap:5px;
     height: 65px;
-    margin:40px 0;
+    margin:70px 0;
 }
 
 nav a{
@@ -89,9 +118,9 @@ nav a{
 }
 
 nav a:nth-child(2){
-    box-shadow: 0px 0px 5px white;
+    box-shadow: 0px 0px 5px 1px white;
     border:1px solid white;
-    font-weight: 800;
+    font-family: "Barlow semi Condensed Bold";
 }
 
 nav a:not(:nth-child(2)):hover{
@@ -101,6 +130,12 @@ nav a:not(:nth-child(2)):hover{
 
 
 /*Main part */
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
 
 main section{
     border:1px solid white;
@@ -151,7 +186,7 @@ main img:nth-child(2){
 /*The layout */
 main .grid-outer-container{
     display: grid;
-    grid-template-columns: 2fr 1.2fr;
+    grid-template-columns: 2fr 1.3fr;
     gap:15px;
 }
 
@@ -202,16 +237,18 @@ main .album-text-container > div:nth-child(2){
 main .grid-container{
     display:grid;
     grid-template-columns:repeat(6, 1fr);
+    grid-template-rows: 180px;
     gap:3px;
 }   
 
 main .grid-container > div{
-    padding:30px 10px;
+    padding:15px;
     background-color: #373737;
     border-radius: 20px;
 
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -226,6 +263,12 @@ main ul li{
     list-style-type: none;
 }
 
+/*footer */
+
+footer p{
+    margin-top:70px;
+}
+
 
 /*Imported Fonts */
 
@@ -234,6 +277,11 @@ main ul li{
 @font-face {
     font-family:"Barlow semi Condensed";
     src: url("../media/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Barlow semi Condensed Bold";
+    src: url("../media/fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf");
 }
 
 @font-face {
