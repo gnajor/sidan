@@ -1,86 +1,115 @@
 
-
+/*The first stage that makes the text dynamic*/
 
 @media (max-width:1100px){
-    h1{
-        font-family: var(--h1_font_fam);
-        font-size: calc(var(--main_font_sz) / 100vw * 100);
-        margin:0;
-        line-height: 1;
+
+    h1{ font-size: calc(var(--main_font_sz_dynamic) + 5.5vw);
     }
     
     h2{
-        font-family: var(--h2_font_fam);
-        font-size: calc((var(--main_font_sz) + 15px) / 100vw);
-        line-height: 1;
-        margin:0;
-    
+        font-size: calc(var(--main_font_sz_dynamic) + 1.4vw);    
     }
     
     h3{
-        font-family: var(--h3_font_fam);
-        font-size: calc(var(--main_font_sz) + 9px);
-        margin-top:5px;
-        margin-bottom:0px;
+        font-size: calc(var(--main_font_sz_dynamic) + 0.8vw);
     }
     
     nav a{
-        font-size:calc(var(--main_font_sz) + 8px);
-        line-height: 1;
+        font-size:calc(var(--main_font_sz_dynamic) + 0.72vw);
     }
     
     p, li{
-        margin:0;
-        font-size: calc(var(--main_font_sz));
-        line-height: 1.2;
-    }
-    
-    .text-container > ul{
-        margin:55px 0;
+        font-size: var(--main_font_sz_dynamic);
     }
     
     span{
-        font-weight: bold;
-        font-size: calc(var(--main_font_sz) + 2px);
+        font-size: calc(var(--main_font_sz_dynamic) + 0.2vw);
     }
     
     .album-text-container p{
-        font-size: calc(var(--main_font_sz) - 3px);
-        line-height: 1.25;
+        font-size: calc(var(--main_font_sz_dynamic) - 0.5vw);
     }
     
     .grid-container p{
-        font-size: calc(var(--main_font_sz) - 1px);
+        font-size: calc(var(--main_font_sz_dynamic) - 0.2vw);
     }
 }
 
 /*Tablet läge*/
 
-@media (min-width:499px) and (max-width:800px){
+@media (min-width:501px) and (max-width:800px){
 
     body{
         background-image: none;
     }
 
+    /*wrapper | makes the min-width from 780px to 500px*/
+
     body > div{
-        max-width: 800px;
         min-width: 500px;
+    }
+
+    /*text settings*/
+
+    h1{ 
+        font-size: calc(var(--tablet_phone_font_sz) + 9vw);
+        text-align: center;
+    }
+    
+    h2{
+        font-size: calc(var(--tablet_phone_font_sz) + 2.8vw);    
+    }
+    
+    h3{
+        font-size: calc(var(--tablet_phone_font_sz) + 2vw);
+    }
+    
+    nav a{
+        font-size:calc(var(--tablet_phone_font_sz) + 1vw);
+    }
+    
+    p, li{
+        font-size: var(--tablet_phone_font_sz);
+    }
+    
+    p > span{
+        font-size: calc(var(--tablet_phone_font_sz) + 1vw);
+    }
+    
+    .album-text-container p{
+        font-size: calc(var(--tablet_phone_font_sz) - 0.1vw);
+    }
+    
+    .grid-container p{
+        font-size: calc(var(--tablet_phone_font_sz) - 0.3vw);
+    }
+
+    /*Two list's items are gone in tablet mode*/
+
+    section:nth-child(1) .album-text-container div:first-child p:nth-child(7){
+        display: none;
+    }
+
+    section:nth-child(1) .album-text-container div:last-child p:nth-child(6){
+        display: none;
     }
 
     main .grid-outer-container{
         grid-template-columns: auto;
-        grid-template-rows:auto auto;
+        grid-template-rows:auto auto;   /*The rows are relative to the content*/
     }
 
     main .flex-album-container {
-        grid-row:1;
+        grid-row:1;             /*Changes the order*/
         flex-direction: row;
+    }
+
+    main .flex-album-container > div:first-child{
+        width: 40vw;        /*Makes the image-container change size */
     }
 
     main .album-text-container{
         flex-direction: column;
-
-        margin:0px 0px 0px 10px;
     }
 
     main .flex-album-container div:nth-child(1) img{border-radius:20px 0px 0px 20px;}
@@ -89,7 +118,7 @@
 
     main .grid-container{
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows:repeat(auto auto);
+        grid-template-rows:repeat(2, 190px);
     }
 
     /*page 1 grid cells/areas*/
@@ -120,44 +149,70 @@
 
 /*Phone mode*/
 
-@media (max-width:500px){
+@media (max-width:501px){
     body{
         background-image: url("../media/images/background-phone.webp");
         margin:0;
     }
 
+    /*wrapper | makes the min-width from 780px to 0px*/
+
     body > div{
-        max-width:500px;
         min-width: 0px;
         border-radius: 0px;
     }
 
+    /*text settings*/
+
+    h1{ 
+        font-size: calc(var(--tablet_phone_font_sz) + 13vw);
+        text-align: center;
+    }
+    
+    h2{
+        font-size: calc(var(--tablet_phone_font_sz) + 5vw);    
+    }
+    
+    h3{
+        font-size: calc(var(--tablet_phone_font_sz) + 3vw);
+    }
+    
+    nav a{
+        font-size:calc(var(--tablet_phone_font_sz) + 1vw);
+    }
+    
+    p, li{
+        font-size: calc(var(--tablet_phone_font_sz) + 1.5vw);
+    }
+    
+    p > span{
+        font-size: calc(var(--tablet_phone_font_sz) + 1.8vw);
+    }
+    
+    .album-text-container p{
+        font-size: calc(var(--tablet_phone_font_sz) + 0.6vw);
+    }
+    
+    .grid-container p{
+        font-size: calc(var(--tablet_phone_font_sz) + 0.6vw);
+    }
+
     main .grid-outer-container{
         grid-template-columns: auto;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto; /*Is relative to the content*/
     }
 
     main .flex-album-container{
-        grid-row: 1;
-    }
-
-    main .album-text-container{
-        flex-direction: row;
-        margin:10px 0px;
+        grid-row: 1;    /*changes the order*/
     }
 
     main .album-text-container div:nth-child(1){border-radius: 0px 0px 0px 20px;}
     main .album-text-container div:nth-child(2){border-radius: 0px 0px 20px 0px;}
 
-    main .flex-album-container{
-        flex-direction: column;
-
-      
-    }
-
+    
     main .grid-container{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows:auto auto auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows:repeat(2, 190px);
     }
 
     /*page 1 grid cells/areas*/

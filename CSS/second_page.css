@@ -1,8 +1,8 @@
 /*The text and background color for the album text*/
 
-main section:nth-child(1) .album-text-container > div{
-    background-color: rgb(255, 255, 255);
-    color:black;
+main section:nth-child(2) .album-text-container > div{
+    background-color: #000203;
+    color:white;
 }
 
 /*The bottom grid*/
